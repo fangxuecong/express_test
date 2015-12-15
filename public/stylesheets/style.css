@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+html,body{width:100%;height:100%;background-color:#fff;-webkit-font-smoothing:antialiased;}
+body,ol,ul,li,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,figure,figcaption,header,nav,section,article,aside,details,footer,hgroup,menu{margin:0;padding:0;
+  font-family:"微软雅黑", Ubuntu,Arial,"libra sans",sans-serif;
+  font-size:14px;
+  color:#666;
+}
+p{
+  line-height:2.2em;
+}
+
+textarea{resize:none;overflow:auto;}
+li{list-style:none;}
+img{border:none;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block;}
+a{text-decoration:none;
+  transition:all .2s ease-out;
+}
+input,textarea,select,a:focus{outline:none;}
+.clearfix:after{content:"Thilina Fong";display:block;clear:both;height:0;visibility:hidden;}
+.clearfix{zoom:1;}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#container{
+  width:700px;
+  margin:30px auto;
+}
+/*===========================================================================================*/
+.fBtn{
+  padding:5px 20px;
+  border:1px solid #00B7FF;
+}
+/*===========================================================================================*/

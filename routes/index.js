@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var fs=require('fs');
 var path=require('path');
+
+var cp=require('./functions/cp');
+
+//console.log(typeof cp);
 
 /* =================$ DEBUG=test npm start======================================================== */
 /* GET home page. */
@@ -11,13 +14,10 @@ router.get('/', function(req, res, next) {
 
 //===========cp
 router.get('/cp', function(req, res, next) {
-  function cp(src,dst){
-    fs.writeFileSync(dst,fs.readFileSync(src));
-  }
+  var src=path.join(__dirname, 'fs', 'srcfile.txt');
+  var dst=path.join(__dirname, 'fs', Math.random()+'.ws');
 
-  cp(path.join(__dirname, 'fs', 'srcfile.txt'),path.join(__dirname, 'fs', 'try66.txt'));
-  //Error: ENOENT, no such file or directory '/home/wfe/nodejs/exppro/express_test/routes/nd/temp.txt'
-  ///home/wfe/nodejs/exppro/express_test/routes/fs/srcfile.txt
+  cp(src,dst);
 
   res.end('okay!');
 

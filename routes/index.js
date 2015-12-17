@@ -3,13 +3,22 @@ var router = express.Router();
 var path=require('path');
 
 var cp=require('./functions/cp');
-
+var showAllFiles=require('./functions/showAllFiles');
+var docRoot=path.join(__dirname,'../');
 //console.log(typeof cp);
 
 /* =================$ DEBUG=test npm start======================================================== */
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'cp_node' });
+
+  var fileList=showAllFiles(docRoot);
+  //console.log(fileList);
+
+  res.render('index', {
+    title: 'cp_node',
+    curDir:path.join(__dirname,'../'),    //curDir:path.normalize(__dirname+'./../')
+    fileList:fileList
+  });
 });
 
 //===========cp

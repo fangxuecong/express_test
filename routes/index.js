@@ -15,11 +15,16 @@ router.get('/', function(req, res, next) {
 //===========cp
 router.get('/cp', function(req, res, next) {
   var src=path.join(__dirname, 'fs', 'srcfile.txt');
-  var dst=path.join(__dirname, 'fs', Math.random()+'.ws');
+  var dst=path.join(__dirname, 'fs',new Date(2016,7,8)+'.mp3');
+
+  var ext=path.extname(dst);  //后缀名
 
   cp(src,dst);
 
-  res.end('okay!');
+  res.writeHead(200,{
+    "Content-Type":"text/html;charset=utf-8"
+  });
+  res.end(dst+"的后缀名是："+ext);
 
 });
 

@@ -1,3 +1,9 @@
-$('#cp_node').click(function(){
-    //alert(8);
+$(function(){
+    var arr=["createReadStream","pipe","createWriteStream"];
+    console.log(arr);
+
+    arr2=arr.slice(1);
+
+    console.log(arr);
+    console.log(arr2);
 });

@@ -6,6 +6,9 @@ body,ol,ul,li,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,figure,figcaption,h
   font-size:14px;
   color:#666;
 }
+div{
+  box-sizing: border-box;
+}
 p{
   line-height:2.2em;
 }
@@ -29,10 +32,6 @@ a {
   color: #00B7FF;
 }
 
-#container{
-  width:700px;
-  margin:30px auto;
-}
 /*===========================================================================================*/
 .fBtn{
   padding:5px 20px;

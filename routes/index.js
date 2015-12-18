@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var path=require('path');
+var url=require('url');
+var querystring=require('querystring');
 
 var cp=require('./functions/cp');
 var showAllFiles=require('./functions/showAllFiles');
@@ -13,11 +15,20 @@ var docRoot=require('docroot');
 router.get('/', function(req, res, next) {
 
   var fileList=showAllFiles(docRoot);
-  //console.log(fileList);
+  //console.log(req.url);
+  var opt={
+    title: 'cp_node',
+    curDir:path.join(__dirname,'../'),    //curDir:path.normalize(__dirname+'./../')
+    fileList:fileList
+  }
+
+  //var aa=querystring.stringify(opt);
+  //console.log(aa);
 
   res.render('index', {
     title: 'cp_node',
     curDir:path.join(__dirname,'../'),    //curDir:path.normalize(__dirname+'./../')
+    curUrl:url.parse(req.url).pathname,
     fileList:fileList
   });
 });

@@ -4,8 +4,9 @@ var path=require('path');
 
 var cp=require('./functions/cp');
 var showAllFiles=require('./functions/showAllFiles');
-var docRoot=path.join(__dirname,'../');
-//console.log(typeof cp);
+//var docRoot=path.join(__dirname,'../');
+var docRoot=require('docroot');
+//console.log(typeof docRoot);
 
 /* =================$ DEBUG=test npm start======================================================== */
 /* GET home page. */

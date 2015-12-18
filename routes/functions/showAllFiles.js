@@ -1,8 +1,8 @@
 var fs=require('fs');
 var path=require('path');
+//var dooo=require('docroot');
 
-//var docRoot=path.join(__dirname,'../','../');
-//console.log(docRoot);
+//console.log(dooo);
 //====>/home/wfe/nodejs/exppro/express_test/
 
 

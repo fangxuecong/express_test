@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
     title: 'cp_node',
     curDir:path.join(__dirname,'../'),    //curDir:path.normalize(__dirname+'./../')
     fileList:fileList
-  }
+  };
 
   //var aa=querystring.stringify(opt);
   //console.log(aa);

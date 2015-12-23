@@ -9,6 +9,8 @@ var showAllFiles=require('./functions/showAllFiles');
 //var docRoot=path.join(__dirname,'../');
 var docRoot=require('docroot');
 //console.log(typeof docRoot);
+var demoUrl="http://www.hao123.com/?tn=96066187_hao_pg";
+
 
 /* =================$ DEBUG=test npm start======================================================== */
 /* GET home page. */
@@ -28,7 +30,7 @@ router.get('/', function(req, res, next) {
   res.render('index', {
     title: 'cp_node',
     curDir:path.join(__dirname,'../'),    //curDir:path.normalize(__dirname+'./../')
-    curUrl:url.parse(req.url).pathname,
+    curUrl:url.parse(demoUrl),
     fileList:fileList
   });
 });

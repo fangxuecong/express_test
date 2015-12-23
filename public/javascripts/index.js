@@ -1,5 +1,14 @@
 $(function(){
-
+  //======================================
+  //======================================
+  //======================================
+  //======================================
+  //======================================
+  //======================================
+  //======================================
+  //======================================
+  //======================================
+  
   /*
   var arr=["createReadStream","pipe","createWriteStream"];
   console.log(arr);*/
@@ -56,20 +65,26 @@ $(function(){
   //======================================
   //next函数
   // var arr=["createReadStream","pipe","createWriteStream",4,5,6,7,8,9];
+  /*
   var arr=[1,2,3,4,5,6];
-  (function next(i,len,callback){
-    // for(var i=0;i<len;i++){}
-    if(i<len){
-      arr[i]=arr[i]*arr[i];
-      console.log(i);
-      next(i+1,len,callback);
-      // console.log(len);
-    }else{
-      callback();
-    }
-  })(0,arr.length,function(){
-    console.log(arr);
-  });
+    (function next(i,len,callback){
+      // for(var i=0;i<len;i++){}
+      if(i<len){
+        arr[i]=arr[i]*arr[i];
+        console.log(i);
+        next(i+1,len,callback);
+        // console.log(len);
+      }else{
+        callback();
+      }
+    })(0,arr.length,function(){
+      console.log(arr);
+    });
+    
+    
+    var aa=$("#test").html();
+    console.log(aa);*/
+  
   
   //======================================
   

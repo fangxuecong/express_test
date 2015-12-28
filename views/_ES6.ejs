@@ -1,0 +1,71 @@
+<h2>ECMAScript 2015 (ES6) in Node.js</h2>
+
+<p>Node.js is built against modern versions of V8. By keeping up-to-date with the latest releases of this engine, we ensure new features from the JavaScript ECMA-262 specification are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.</p>
+
+<p>All ECMAScript 2015 (ES6) features are split into three groups for shipping, staged, and in progress features:</p>
+
+<ul>
+  <li>All shipping features, which V8 considers stable, are turned on by default on Node.js and do NOT require any kind of runtime flag.</li>
+  <li>Staged features, which are almost-completed features that are not considered stable by the V8 team, require a runtime flag: --es_staging (or its synonym, --harmony).</li>
+  <li>In progress features can be activated individually by their respective harmony flag (e.g. --harmony_destructuring), although this is highly discouraged unless for testing purposes.</li>
+</ul>
+
+<h4>Which features ship with Node.js by default (no runtime flag required)?</h4>
+<ul>
+  <li>
+    Block scoping
+    <ul>
+      <li>let (strict mode only)</li>
+      <li>const</li>
+      <li>function-in-blocks (strict mode only [1])</li>
+    </ul>
+  </li>
+  <li>Classes (strict mode only)</li>
+  <li>
+    Collections
+    <ul>
+      <li>Maps</li>
+      <li>WeakMap</li>
+      <li>Set</li>
+      <li>WeakSet</li>
+    </ul>
+  </li>
+  <li>Typed arrays</li>
+  <li>Generators</li>
+  <li>Binary and Octal literals</li>
+  <li>Object literal extensions (shorthand properties and methods)</li>
+  <li>Promises</li>
+  <li>New String methods</li>
+  <li>Symbols</li>
+  <li>Template strings</li>
+  <li>Arrow Functions</li>
+  <li>new.target [2]</li>
+  <li>Object.assign</li>
+  <li>Spread operator [2]</li>
+</ul>
+<p>You can view a more detailed list, including a comparison with other engines, on the compat-table project page.</p>
+<p>[1]: As of v8 3.31.74.1, block-scoped declarations are intentionally implemented with a non-compliant limitation to strict mode code. Developers should be aware that this will change as v8 continues towards ES6 specification compliance.</p>
+<p>[2]: Only available in Node.js >= 5.x.x</p>
+
+<h4>Which features are behind the --es_staging flag?</h4>
+<ul>
+  <li>Symbol.toStringTag (user-definable results for Object.prototype.toString, behind flag --harmony_tostring)</li>
+  <li>Array.prototype.includes (determine whether an array includes a certain element, behind flag --harmony_array_includes) [2]</li>
+  <li>Rest Parameters (represent an indefinite number of arguments as an array, behind flag --harmony_rest_parameters) [2]</li>
+</ul>
+
+<h4>Which features are in progress?</h4>
+<p>New features are constantly being added to the V8 engine. Generally speaking, expect them to land on a future Node.js release, although timing is unknown.</p>
+<p>You may list all the in progress features available on each Node.js release by grepping through the --v8-options argument. Please note that these are incomplete and possibly broken features of V8, so use them at your own risk:</p>
+<p class="hasCode">
+  <code>node --v8-options | grep "in progress"</code>
+</p>
+
+<h4>I have my infrastructure set up to leverage the --harmony flag. Should I remove it?</h4>
+<p>The current behaviour of the --harmony flag on Node.js is to enable staged features only. After all, it is now a synonym of --es_staging. As mentioned above, these are completed features that have not been considered stable yet. If you want to play safe, especially on production environments, consider removing this runtime flag until it ships by default on V8 and, consequently, on Node.js. If you keep this enabled, you should be prepared for further Node.js upgrades to break your code if V8 changes their semantics to more closely follow the standard.</p>
+
+<h4>How do I find which version of V8 ships with a particular version of Node.js?</h4>
+<p>Node.js provides a simple way to list all dependencies and respective versions that ship with a specific binary through the process global object. In case of the V8 engine, type the following in your terminal to retrieve its version:</p>
+<p class="hasCode">
+  <code>node -p process.versions.v8</code>
+</p>

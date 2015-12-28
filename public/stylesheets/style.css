@@ -1,16 +1,16 @@
 @charset "utf-8";
 
-html,body{width:100%;height:100%;background-color:#fff;-webkit-font-smoothing:antialiased;}
+html,body{width:100%;height:100%;background-color:#fff;-webkit-font-smoothing:antialiased;font-size:10px;}
 body,ol,ul,li,p,h1,h2,h3,h4,h5,h6,form,input,textarea,select,figure,figcaption,header,nav,section,article,aside,details,footer,hgroup,menu{margin:0;padding:0;
   font-family:"微软雅黑", Ubuntu,Arial,"libra sans",sans-serif;
-  font-size:14px;
-  color:#666;
+  font-size:1.4rem;
+  color:#333;
 }
 div{
   box-sizing: border-box;
 }
 p{
-  line-height:2.2em;
+  line-height:1.8em;
 }
 
 textarea{resize:none;overflow:auto;}
@@ -25,7 +25,7 @@ input,textarea,select,a:focus{outline:none;}
 .clearfix{zoom:1;}
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 1.4rem "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -41,6 +41,8 @@ a {
 #container{
   
 }
+/*===header===*/
+
 header{
   background:#666;
 }
@@ -102,6 +104,90 @@ header nav{
 
 
 
+/*===body===*/
+.content{
+}
+/*===二级菜单===*/
+.second_nav{
+  width:200px;
+  float:left;
+}
+.second_nav h3{
+  margin:8px 0;
+  font-weight: 500;
+}
+.second_nav h3 a{
+  font-size:1.4em;
+  background:#FFF;
+  color:#FFB900;
+  display: block;
+  padding:4px 10px;
+}
+.second_nav h3 a:hover{
+  background:#FFB900;
+  color: #FFF;
+}
+.second_nav h3 a.active{
+  background:#55D900;
+  color: #333;
+}
+/*===文章内容===*/
+.article{
+  float:right;
+  width: calc(100% - 220px);
+  width: -webkit-calc(100% - 220px);
+}
+.article h2{
+  font-size:2.5rem;
+  margin-top:10px;
+  margin-bottom:30px;
+}
+.article p{
+  font-size:1.8rem;
+  margin:20px 0;
+}
+.article p.hasCode{
+  background:#333;
+  padding:4px 10px;
+}
+.article p.hasCode code{
+  color:#FFF;
+  font-size:1.2rem;
+}
+.article h4{
+  font-size:2rem;
+  margin:30px 0;
+  text-decoration:underline;
+}
+.article ul{
+  margin-left:20px;
+}
+.article ul li{
+  list-style:disc;
+  margin-left:15px;
+  font-size:1.6rem;
+  margin:10px 0 10px 15px;
+  font-family:"Franklin Gothic Medium";
+}
+.article ul li ul li{
+  list-style:circle;
+}
+/*
+.article p:has("code"){ //$("div:has(p)") 
+  background:red;
+}*/
+
+.article a{}
+
+/*===footer===*/
+footer{
+  background:#595959;
+  margin-top:4rem;
+  padding:15px 0;
+}
+.footer p{
+  color:#fff;
+}
 
 
 
@@ -128,7 +214,4 @@ header nav{
 
 
 
-
-
-
-
+/*=========END==================================================================================*/

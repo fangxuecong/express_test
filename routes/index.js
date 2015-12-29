@@ -13,5 +13,12 @@ router.get('/', function(req, res, next) {
   res.render('index', sendToIndexEjs);
 });
 
+router.get('/signup',function(req,res,next){
+  var sendToSignUpEjs={
+    title:'注册 - Node.js'
+  };
+  res.render('signup',sendToSignUpEjs);
+});
+
 
 module.exports = router;

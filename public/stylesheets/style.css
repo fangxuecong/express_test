@@ -46,6 +46,36 @@ a {
 header{
   background:#666;
 }
+.sign{
+  background:#333;
+  padding:0px 30px;
+  text-align:right;
+}
+a.se1{
+  margin:0 4px;
+  display:inline-block;
+  padding:8px 10px;
+  color:#FFF;
+  position:relative;
+}
+a.se1::after{
+  content:"";
+  position:absolute;
+  display:block;
+  height:2px;
+  background:#FFF;
+  left:0;
+  bottom:0;
+  width:0%;
+  overflow:hidden;
+  transition:width .2s ease-out;
+  -webkit-transition:width .12s ease-out;
+}
+a.se1:hover::after{
+  width:100%;
+}
+.signIn{}
+.signUp{}
 header h1{
   padding-top:30px;
 }
@@ -177,7 +207,9 @@ header nav{
   background:red;
 }*/
 
-.article a{}
+.article a{
+  text-decoration: underline;
+}
 
 /*===footer===*/
 footer{

@@ -37,12 +37,6 @@ a {
   padding:5px 20px;
   border:1px solid #00B7FF;
 }
-.fBtn2{
-  padding:5px 50px;
-  border:1px solid #000;
-  background:#000;
-  color:#FFF;
-}
 /*=======page INDEX====================================================================================*/
 #container{
   
@@ -273,15 +267,9 @@ ul.form li{
   width:130px;
   box-sizing:border-box;
   text-align:center;
-  padding-left:0;
-  padding-right:0;
 }
 #signUp a.submitBtn{
   background:#000;
-  border:1px solid #000;
-}
-#signUp a.submitBtn:hover{
-  background:#666;
 }
 .to{
   margin-left:8px;
@@ -290,18 +278,42 @@ ul.form li{
 /*=======page SIGNIN====================================================================================*/
 #signIn a.submitBtn{
   background:#FFB900;
-  border:1px solid #FFB900;
-}
-#signIn a.submitBtn:hover{
-  background:#BBB900;
 }
 
+/*====================*/
+a.se2{
+  color:#FFF;
+  overflow:hidden;
+  height:30px;
+}
+a.se2 > span.fText{
+  display:block;
+  height:30px;
+  line-height:30px;
+  transform:translate(0px,0px);
+  -webkit-transform:translate(0px,0px);
+  transition:transform .2s ease-out;
+  -webkit-transition:-webkit-transform .2s ease-out;
+}
+a.se2 > span.fTextHvr{
+  display:block;
+  height:30px;
+  line-height:30px;
+  transform:translate(-130px,-30px);
+  -webkit-transform:translate(-130px,-30px);
+  transition:transform .2s ease-out;
+  -webkit-transition:-webkit-transform .2s ease-out;
+}
 
-
-
-
-
-
+a.se2:hover > span.fText{
+  transform:translate(130px,0px);
+  -webkit-transform:translate(130px,0px);
+}
+a.se2:hover > span.fTextHvr{
+  transform:translate(0px,-30px);
+  -webkit-transform:translate(0px,-30px);
+}
+/*====================*/
 
 
 

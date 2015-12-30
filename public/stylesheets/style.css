@@ -261,7 +261,7 @@ ul.form label::after{
 }
 ul.form input{
   margin-left:-3px;
-  width:calc(500px - 130px - 20px);
+  width:350px;  /*calc(500px - 130px - 20px)*/
   padding-left:10px;
 }
 ul.form li{
@@ -270,14 +270,31 @@ ul.form li{
 .formWrap a.submitBtn{
   display:inline-block;
   margin-top:30px;
+  width:130px;
+  box-sizing:border-box;
+  text-align:center;
+  padding-left:0;
+  padding-right:0;
+}
+#signUp a.submitBtn{
+  background:#000;
+  border:1px solid #000;
+}
+#signUp a.submitBtn:hover{
+  background:#666;
 }
 .to{
   margin-left:8px;
   font-weight:700;
 }
-
-
-
+/*=======page SIGNIN====================================================================================*/
+#signIn a.submitBtn{
+  background:#FFB900;
+  border:1px solid #FFB900;
+}
+#signIn a.submitBtn:hover{
+  background:#BBB900;
+}
 
 
 

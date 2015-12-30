@@ -315,7 +315,33 @@ a.se2:hover > span.fTextHvr{
 }
 /*====================*/
 
-
+/*=======page DOWNLOAD====================================================================================*/
+.brief{
+  font-size:1.9rem;
+  text-align:center;
+  margin-top:50px;
+}
+.download{
+  font-size:2.5rem;
+  text-align:center;
+  margin-top:40px;
+}
+p.downloadEntrance{
+  text-align:center;
+  margin-top:30px;
+  margin-bottom:80px;
+}
+p.downloadEntrance a{
+  border: 1px solid #80BD01;
+  padding: 5px 20px;
+  background:#80BD01;
+  color:#FFF;
+  display: inline-block;
+  margin:0 20px;
+}
+p.downloadEntrance a:hover{
+  background:#6fa401;/* 暗一点 */
+}
 
 
 

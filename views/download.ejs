@@ -1,0 +1,37 @@
+<% include _head %>
+<!-- ======DOWNLOAD========================================================== -->
+<div id="container">
+  <!-- ==页头============== -->
+  <header>
+    <div class="sign">
+      <a class="signIn se1" href="/signin">登录</a>
+      <a class="signUp se1" href="/signup">注册</a>
+    </div>
+    <h1>
+      <a id="logo" href="/" title="Node.js起始页">Node.js</a>
+    </h1>
+    <nav class="container clearfix">
+      <% include _navbar %>
+    </nav>
+  </header>
+  
+  <!-- ==content============== -->
+  <div class="content container clearfix">
+    <p class="brief">Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. <br />Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. <br />Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.</p>
+    <h3 class="download">Download for Linux (x64)</h3>
+    <p class="downloadEntrance">
+      <a href="/files/node-v4.2.4-linux-x64.tar.gz">v4.2.4 LTS</a>
+      <a href="/files/node-v5.3.0-linux-x64.tar.gz">v5.3.0</a>
+    </p>
+  </div>
+  
+  <!-- ==页尾============== -->
+  <footer>
+    <div class="footer container">
+      <% include _footer %>
+    </div>
+  </footer>
+</div>
+<!-- ================================================================ -->
+<% include _foot %>
+

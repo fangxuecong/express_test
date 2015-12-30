@@ -1,26 +1,29 @@
 <ul id="nav" class="clearfix">
-  <li>
+  <li <% if(nNav===0){ %>class="active"<% }%>>
     <a href="#">HOME</a>
   </li>
-  <li>
+  <li <% if(nNav===1){ %>class="active"<% }%>>
     <a href="#">ABOUT</a>
   </li>
-  <li>
-    <a href="/files/node-v4.2.4-linux-x64.tar.gz">DOWNLOADS</a>
+  
+  <li <% if(nNav===2){ %>class="active"<% }%>>
+    <a href="/download">DOWNLOADS</a>
+    <!-- <a href="/files/node-v4.2.4-linux-x64.tar.gz">DOWNLOADS</a> -->
   </li>
-  <li class="active">
-    <a href="#">DOCS</a>
+  
+  <li <% if(nNav===3){ %>class="active"<% }%>>
+    <a href="/">DOCS</a>
   </li>
-  <li>
+  <li <% if(nNav===4){ %>class="active"<% }%>>
     <a href="#">FOUNDATION</a>
   </li>
-  <li>
+  <li <% if(nNav===5){ %>class="active"<% }%>>
     <a href="#">GET INVOLVED</a>
   </li>
-  <li>
+  <li <% if(nNav===6){ %>class="active"<% }%>>
     <a href="#">SECURITY</a>
   </li>
-  <li>
+  <li <% if(nNav===7){ %>class="active"<% }%>>
     <a href="#">NEWS</a>
   </li>
 </ul>

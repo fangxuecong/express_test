@@ -7,7 +7,8 @@ var path=require('path');
 router.get('/', function(req, res, next) {
 
   var sendToIndexEjs={
-    title: 'Node.js'
+    title: 'Node.js',
+    nNav:3
   };
 
   res.render('index', sendToIndexEjs);
@@ -25,6 +26,14 @@ router.get('/signin',function(req,res,next){
     title:'登入 - Node.js'
   };
   res.render('signin',sendToSignInEjs);
+});
+/* GET download page. */
+router.get('/download',function(req,res,next){
+  var sendToDownloadEjs={
+    title:'下载node - Node.js',
+    nNav:2
+  };
+  res.render('download',sendToDownloadEjs);
 });
 
 module.exports = router;

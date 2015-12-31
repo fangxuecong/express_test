@@ -31,13 +31,19 @@ router.get('/signin',function(req,res,next){
 });
 /* GET download page. */
 router.get('/download',function(req,res,next){
-  console.log(req.session.lastPage);
-  var sendToDownloadEjs={
-    title:'下载node - Node.js',
-    nNav:2
-  };
-  req.session.lastPage='/download';
-  res.render('download',sendToDownloadEjs);
+  //console.log(req.session.lastPage);
+  var haveSignIn=req.session.haveSignIn || false;
+  if(haveSignIn){ //已经登录
+    var sendToDownloadEjs={
+      title:'下载node - Node.js',
+      nNav:2
+    };
+    //req.session.lastPage='/download';
+    res.render('download',sendToDownloadEjs);
+  }else{
+    res.redirect('/signin');
+  }
+  
 });
 
 module.exports = router;

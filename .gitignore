@@ -37,3 +37,5 @@ npm-debug.log
 nd
 routes/fs
 test.file
+foo.ejs
+bar.ejs

@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+//1.引入中间件
+var session=require('express-session');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -22,6 +24,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//2.use 中间件
+app.use(session({
+  secret:'wfe',
+  name:'dl',
+  cookie:{
+    maxAge:604800000 //ms
+  },
+  resave:false, //是指每次请求都重新设置session cookie，假设你的cookie是10分钟过期，每次请求都会再设置10分钟
+  saveUninitialized:true  //是指无论有没有session cookie，每次请求都设置个session cookie ，默认给个标示为 connect.sid
+}));
 
 app.use('/', routes);
 app.use('/users', users);

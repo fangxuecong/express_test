@@ -63,7 +63,12 @@ router.post('/signin',function(req,res,next){
       if(doc===null){
         res.end("用户名和密码不匹配");
       }else{
-        res.end("sign in success!!");
+        req.session.haveSignIn=true;
+        if(req.session.lastPage==='/download'){
+          res.redirect(req.session.lastPage);
+        }else{
+          res.redirect('/');
+        }
       }
     }
   });
@@ -80,6 +85,7 @@ router.get('/download',function(req,res,next){
     //req.session.lastPage='/download';
     res.render('download',sendToDownloadEjs);
   }else{
+    req.session.lastPage='/download';
     res.redirect('/signin');
   }
   

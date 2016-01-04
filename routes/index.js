@@ -26,12 +26,12 @@ router.get('/signup',function(req,res,next){
 });
 /* POST signup page. */
 router.post('/signup',function(req,res,next){
-  var reqSchema={
+  var req_user={
     username:req.body.fname,
     password:req.body.fpassword
   };
   
-  var user=new User(reqSchema); //3.实例
+  var user=new User(req_user); //3.实例
   user.save(function(err){     //4.保存
     if(err){
       console.log("错误err:"+err);
@@ -47,6 +47,26 @@ router.get('/signin',function(req,res,next){
     title:'登入 - Node.js'
   };
   res.render('signin',sendToSignInEjs);
+});
+/* POST signin page. */
+router.post('/signin',function(req,res,next){
+  var req_user={
+    username:req.body.fname,
+    password:req.body.fpassword
+  };
+  User.findOne(req_user,function(err,doc){
+    if(err){
+      console.log(err);
+      res.end("err");
+    }else{
+      //console.log(doc);  //doc-----null,object
+      if(doc===null){
+        res.end("用户名和密码不匹配");
+      }else{
+        res.end("sign in success!!");
+      }
+    }
+  });
 });
 /* GET download page. */
 router.get('/download',function(req,res,next){

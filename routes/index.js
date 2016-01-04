@@ -8,13 +8,17 @@ var User=require('../models/user'); //2.模型
 /* GET home page. */
 router.get('/', function(req, res, next) {
   //4.读取session
-  console.log(req.session.lastPage);
+  // console.log(req.session.lastPage);
+  var haveSignIn=req.session.haveSignIn || false;
+  var username=req.session.username || '';
   var sendToIndexEjs={
     title: 'Node.js',
+    haveSignIn:haveSignIn,
+    username:username,
     nNav:3
   };
   //3.写入session
-  req.session.lastPage='/';
+  // req.session.lastPage='/';
   res.render('index', sendToIndexEjs);
 });
 /* GET signup page. */
@@ -63,7 +67,9 @@ router.post('/signin',function(req,res,next){
       if(doc===null){
         res.end("用户名和密码不匹配");
       }else{
-        req.session.haveSignIn=true;
+        req.session.haveSignIn=true;  //session登入源头
+        req.session.username=doc.username;
+        //res.redirect('back');
         if(req.session.lastPage==='/download'){
           res.redirect(req.session.lastPage);
         }else{
@@ -77,12 +83,14 @@ router.post('/signin',function(req,res,next){
 router.get('/download',function(req,res,next){
   //console.log(req.session.lastPage);
   var haveSignIn=req.session.haveSignIn || false;
+  var username=req.session.username || '';
   if(haveSignIn){ //已经登录
     var sendToDownloadEjs={
       title:'下载node - Node.js',
+      haveSignIn:haveSignIn,
+      username:username,
       nNav:2
     };
-    //req.session.lastPage='/download';
     res.render('download',sendToDownloadEjs);
   }else{
     req.session.lastPage='/download';

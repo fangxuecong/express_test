@@ -1,0 +1,9 @@
+<div class="sign">
+  <% if(haveSignIn){ %>
+    <a class="theUser se1" href="javascript:;"><%= username %></a>
+    <a class="se1" href="javascript:;">退出</a>
+  <% }else{ %>
+    <a class="signIn se1" href="/signin">登录</a>
+    <a class="signUp se1" href="/signup">注册</a>
+  <% } %>
+</div>

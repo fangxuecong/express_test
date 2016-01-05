@@ -13,12 +13,18 @@
         <ul class="form">
           <li>
             <label>用户名</label>
-            <input type="text" name="fname" class="validate[required]">
+            <input id="fname" type="text" name="fname" class="validate[required]">
           </li>
           <li>
             <label>请输入密码</label>
             <input id="pw2" type="password" class="validate[required]">
             <input type="hidden" name="fpassword" value="">
+          </li>
+          <li>
+            <p class="remember">
+              <input type="checkbox" checked="checked" name="remembertheuser" />
+              <span>记住帐号</span>
+            </p>
           </li>
         </ul>
         <a class="submitBtn se2" href="javascript:void(0);">

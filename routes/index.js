@@ -66,6 +66,16 @@ router.get('/signin',function(req,res,next){
 });
 /* 5=======POST signin page. */
 router.post('/signin',function(req,res,next){
+  //console.log(req.body.remembertheuser);  //'on' 'undefine'
+  if(req.body.remembertheuser==='on'){
+    var hour=60*60*1000;
+    req.session.expires=new Date(Date.now()+hour);
+    req.session.cookie.maxAge=hour;
+  }else{
+    req.session.expires=new Date();
+    req.session.cookie.maxAge=null;
+  }
+  
   var req_user={
     username:req.body.fname,
     password:req.body.fpassword

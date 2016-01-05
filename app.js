@@ -29,7 +29,7 @@ app.use(session({
   secret:'wfe',
   name:'dl',
   cookie:{
-    maxAge:604800000 //ms
+    //maxAge:604800000 //ms
   },
   resave:false, //是指每次请求都重新设置session cookie，假设你的cookie是10分钟过期，每次请求都会再设置10分钟
   saveUninitialized:true  //是指无论有没有session cookie，每次请求都设置个session cookie ，默认给个标示为 connect.sid

@@ -231,7 +231,7 @@ footer{
   display:block;
 }
 ul.form{}
-ul.form label,ul.form input{
+ul.form label,ul.form input[type=text],ul.form input[type=password]{
   border:none;
   display:inline-block;
   border-bottom:1px solid #333;
@@ -253,7 +253,7 @@ ul.form label::after{
   right:0;
   bottom:0;
 }
-ul.form input{
+ul.form input[type=text],ul.form input[type=password]{
   margin-left:-3px;
   width:350px;  /*calc(500px - 130px - 20px)*/
   padding-left:10px;
@@ -275,11 +275,21 @@ ul.form li{
   margin-left:8px;
   font-weight:700;
 }
+
 /*=======page SIGNIN====================================================================================*/
 #signIn a.submitBtn{
   background:#FFB900;
 }
-
+.remember{
+  margin-top:40px;
+}
+.remember input{
+  position:relative;
+  top:2px;
+}
+.remember span{
+  color:#777;
+}
 /*====================*/
 a.se2{
   color:#FFF;

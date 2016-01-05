@@ -5,7 +5,7 @@ var path=require('path');
 var User=require('../models/user'); //2.模型
 
 /* =================$ DEBUG=test npm start======================================================== */
-/* GET home page. */
+/* 1=======GET home page. */
 router.get('/', function(req, res, next) {
   //4.读取session
   // console.log(req.session.lastPage);
@@ -21,14 +21,20 @@ router.get('/', function(req, res, next) {
   // req.session.lastPage='/';
   res.render('index', sendToIndexEjs);
 });
-/* GET signup page. */
+/* 2=======GET signup page. */
 router.get('/signup',function(req,res,next){
-  var sendToSignUpEjs={
-    title:'注册 - Node.js'
-  };
-  res.render('signup',sendToSignUpEjs);
+  var haveSignIn=req.session.haveSignIn || false;
+  
+  if(haveSignIn){
+    res.redirect('/profile');
+  }else{
+    var sendToSignUpEjs={
+      title:'注册 - Node.js'
+    };
+    res.render('signup',sendToSignUpEjs);
+  }
 });
-/* POST signup page. */
+/* 3=======POST signup page. */
 router.post('/signup',function(req,res,next){
   var req_user={
     username:req.body.fname,
@@ -45,14 +51,20 @@ router.post('/signup',function(req,res,next){
     }
   });
 });
-/* GET signin page. */
+/* 4=======GET signin page. */
 router.get('/signin',function(req,res,next){
-  var sendToSignInEjs={
-    title:'登入 - Node.js'
-  };
-  res.render('signin',sendToSignInEjs);
+  var haveSignIn=req.session.haveSignIn || false;
+  
+  if(haveSignIn){
+    res.redirect('/profile');
+  }else{
+    var sendToSignInEjs={
+      title:'登入 - Node.js'
+    };
+    res.render('signin',sendToSignInEjs);
+  }
 });
-/* POST signin page. */
+/* 5=======POST signin page. */
 router.post('/signin',function(req,res,next){
   var req_user={
     username:req.body.fname,
@@ -79,7 +91,7 @@ router.post('/signin',function(req,res,next){
     }
   });
 });
-/* GET download page. */
+/* 6=======GET download page. */
 router.get('/download',function(req,res,next){
   //console.log(req.session.lastPage);
   var haveSignIn=req.session.haveSignIn || false;
@@ -96,7 +108,15 @@ router.get('/download',function(req,res,next){
     req.session.lastPage='/download';
     res.redirect('/signin');
   }
-  
 });
+/* 7=======GET profile page. */
+router.get('/profile',function(req,res,next){
+  res.end('p用户资料');
+});
+
+
+
+
+
 
 module.exports = router;
